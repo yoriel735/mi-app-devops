@@ -4,7 +4,7 @@ global:
 scrape_configs:
   - job_name: 'mi-app'
     static_configs:
-      - targets: ['app:3000']
+      - targets: ['mi-app:3000']
 
   - job_name: 'prometheus'
     static_configs:
