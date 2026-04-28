@@ -18,7 +18,7 @@ npm run dev
 
 ## Cómo construir y desplegar con Docker
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Accesos
@@ -55,3 +55,5 @@ El pipeline se ejecuta automáticamente en cada push a `main`:
 │  └──────────┘ └──────────┘ └────────┘  │
 │         Docker Compose Network          │
 └─────────────────────────────────────────┘
+
+![Diagrama de despliegue](docs/diagrama-despliegue.png)
