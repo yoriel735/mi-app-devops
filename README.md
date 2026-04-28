@@ -56,4 +56,4 @@ El pipeline se ejecuta automáticamente en cada push a `main`:
 │         Docker Compose Network          │
 └─────────────────────────────────────────┘
 
-![Diagrama de despliegue](docs/diagrama-despliegue.png)
+![Diagrama de despliegue](src/diagrama-despliegue.png)
