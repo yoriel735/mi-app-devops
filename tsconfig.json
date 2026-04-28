@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // Configuración de Módulos
+    "module": "commonjs",
+    "target": "ES2020",
+    "types": ["node"],
+
+    // Archivos de salida
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Opciones estrictas
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Opciones adicionales recomendadas
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+
+    // Directorios
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
