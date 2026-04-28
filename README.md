@@ -38,22 +38,5 @@ El pipeline se ejecuta automáticamente en cada push a `main`:
 
 
 ## DIagrama de despliegue
-┌─────────────────────────────────────────┐
-│           GitHub Repository             │
-│  ┌─────────────────────────────────┐   │
-│  │      GitHub Actions Pipeline    │   │
-│  │  checkout → build → test →      │   │
-│  │  docker build → deploy          │   │
-│  └─────────────────────────────────┘   │
-└──────────────────┬──────────────────────┘
-                   │ push/deploy
-┌──────────────────▼──────────────────────┐
-│           Ubuntu VM / Servidor          │
-│  ┌──────────┐ ┌──────────┐ ┌────────┐  │
-│  │  mi-app  │ │Prometheus│ │Grafana │  │
-│  │ :3000    │ │  :9090   │ │ :3001  │  │
-│  └──────────┘ └──────────┘ └────────┘  │
-│         Docker Compose Network          │
-└─────────────────────────────────────────┘
 
 ![Diagrama de despliegue](src/diagrama-despliegue.png)
