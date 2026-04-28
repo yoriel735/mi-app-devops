@@ -1,0 +1,44 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Compilar y Testear
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Compilar TypeScript
+        run: npm run build
+
+      - name: Ejecutar tests
+        run: npm test
+
+      - name: Construir imagen Docker
+        run: docker build -t mi-app:${{ github.sha }} .
+
+  notify:
+    name: Notificar resultado
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: always()
+
+    steps:
+      - name: Estado del pipeline
+        run: |
+          echo "Pipeline completado"
+          echo "Commit: ${{ github.sha }}"
+          echo "Branch: ${{ github.ref_name }}"
